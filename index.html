@@ -52,13 +52,14 @@
                                     "data": formData,
                                     beforeSend: function (xhr) {
                                         console.log("上傳中...");
-                                        $('body').append('<p>上傳中...</p>');
+                                        $('body').append('<p id="upload">上傳中...</p>');
                                     },
                                     success: function (res) {
                                         var imgur_link = res.data.link.replace('https://i.imgur.com/',
                                             'https://static.mashiro.top/imgur/');
                                         console.log(res.data.link);
                                         console.log(imgur_link);
+                                                document.getElementById("upload").style.visibility='hidden';
                                         $('body').append('<p>圖片網址：' + imgur_link + '</p>');
                                                 $('body').append('<img width="70%" src="' + imgur_link + '" />');
                                             },
