@@ -22,9 +22,27 @@
 <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+    
+    
+      <div data-role="page">
+      
+      <div data-role="header" data-position="fixed">
+        <h1>書名辨識系統</h1>
+      </div>
+      
+      <div data-role="content">
+          
+          
 <form id="imgur">
 <input type="file" class="imgur" accept="image/*" data-max-size="5000" />
 </form>
+           </div>
+          
+          <div data-role="footer" data-position="fixed" data-theme="b">
+          <h4>&copy;Guidephy</h4>
+          </div>
+          
+      
 <script>
         $("document").ready(function () {
 
@@ -83,4 +101,5 @@
                             });
                     });
     </script>
+    </div>
 </body>
