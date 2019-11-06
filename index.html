@@ -19,7 +19,7 @@
         <![endif]-->
 <h1 align="center">書名辨識系統<h1>
     
-<form align="center" id="imgur">
+<form id="imgur">
 <input type="file" class="imgur" accept="image/*" data-max-size="5000" />
 </form>
 <script>
@@ -60,8 +60,8 @@
                                         console.log(res.data.link);
                                         console.log(imgur_link);
                                                 document.getElementById("upload").innerHTML="資料處理完成";
-                                        $('body').append('<p>圖片網址：' + imgur_link + '</p>');
-                                                $('body').append('<img align="center" width="70%" src="' + imgur_link + '" />');
+                                        $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
+                                                $('body').append('<img  width="70%" src="' + imgur_link + '" />');
                                             },
                                             error: function () {
                                                 alert("上傳失敗");
