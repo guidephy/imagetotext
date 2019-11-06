@@ -51,15 +51,15 @@
                                     "contentType": false,
                                     "data": formData,
                                     beforeSend: function (xhr) {
-                                        console.log("上傳中...");
-                                        $('body').append('<p id="upload">上傳中...</p>');
+                                        console.log("資料處理中...");
+                                        $('body').append('<p id="upload">資料處理中...</p>');
                                     },
                                     success: function (res) {
                                         var imgur_link = res.data.link.replace('https://i.imgur.com/',
                                             'https://static.mashiro.top/imgur/');
                                         console.log(res.data.link);
                                         console.log(imgur_link);
-                                                document.getElementById("upload").style.visibility='hidden';
+                                                document.getElementById("upload").innerHTML="資料處理完成";
                                         $('body').append('<p>圖片網址：' + imgur_link + '</p>');
                                                 $('body').append('<img width="70%" src="' + imgur_link + '" />');
                                             },
