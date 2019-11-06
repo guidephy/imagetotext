@@ -65,7 +65,7 @@
                                         console.log(res.data.link);
                                         console.log(imgur_link);
                                         $('body').append('<p>图片地址：' + imgur_link + '</p>');
-                                                $('body').append('<img src="' + imgur_link + '" />');
+                                                $('body').append('<img width="60% src="' + imgur_link + '" />');
                                             },
                                             error: function () {
                                                 alert("上传失败");
