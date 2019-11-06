@@ -11,11 +11,11 @@
 <title>書名辨識系統</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript"> 
      var $j = jQuery.noConflict( true );
-    
      </script> 
    
     <link rel=stylesheet href=jquery.mobile-1.4.5.min.css>
@@ -57,62 +57,49 @@
       
 <script>
     
-        $j("document").ready(function () {
-
-                    $j('input[type=file]').on("change", function () {
-
-                            var $files = $j(this).get(0).files;
-
-                            if ($files.length) {
-
-                                // Reject big files
-                                if ($files[0].size > $j(this).data("max-size") * 1024) {
-                                    console.log("Please select a smaller file");
-                                    return false;
-                                }
-
-                                // Replace ctrlq with your own API key
-                                var apiUrl = 'https://api.imgur.com/3/image';
-                                //var apiUrl = 'https://api.mashiro.top/imgur-api/3/image';
-                                var apiKey = 'f4e0b34abb55c8d';
-
-                                var formData = new FormData();
-                                formData.append("image", $files[0]);
-
-                                var settings = {
-                                    "async": true,
-                                    "crossDomain": true,
-                                    "url": apiUrl,
-                                    "method": "POST",
-                                    "datatype": "json",
-                                    "headers": {
-                                        "Authorization": "Client-ID " + apiKey
-                                    },
-                                    "processData": false,
-                                    "contentType": false,
-                                    "data": formData,
-                                    beforeSend: function (xhr) {
-                                        console.log("上傳中...");
-                                        $j('body').append('<p>上傳中...</p>');
-                                    },
-                                    success: function (res) {
-                                        var imgur_link = res.data.link.replace('https://i.imgur.com/',
-                                            'https://static.mashiro.top/imgur/');
-                                        console.log(res.data.link);
-                                        console.log(imgur_link);
-                                        $j('body').append('<p>圖片網址：' + imgur_link + '</p>');
-                                                $j('body').append('<img width="80%" src="' + imgur_link + '" />');
-                                            },
-                                            error: function () {
-                                                alert("上傳失敗");
-                                            }
-                                    }
-                                    $j.ajax(settings).done(function (response) {
-                                        console.log("Done");
-                                    });
-                                }
-                            });
-                    });
+       
+$("document").ready(function () {
+    $('input[type=file]').on("change", function () {
+        var $files = $(this).get(0).files;
+        var formData = new FormData();
+        formData.append("image", $files[0]);
+        if ($files.length) {
+            // Reject big files
+            if ($files[0].size > $(this).data("max-size") * 1024) {
+                console.log("Please select a smaller file");
+                return false;
+            }
+            // Replace {{Your Client ID }} with your own API key
+            var apiUrl = 'https://api.imgur.com/3/image';
+            var apiKey = 'f4e0b34abb55c8d';
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": apiUrl,
+                "method": "POST",
+                "datatype": "json",
+                "headers": {
+                    "Authorization": "Client-ID " + apiKey
+                },
+                "processData": false,
+                "contentType": false,
+                "data": formData,
+                beforeSend: function () {
+                    console.log("上传中...");
+                },
+                success: function (res) {
+                    $('body').append('<img src="' + res.data.link + '" />');
+                },
+                error: function () {
+                    alert("上传失败");
+                }
+            }
+            $.ajax(settings).done(function (res) {
+                console.log("Done");
+            });
+        }
+    });
+});
     </script>
      </div>
      <div data-role="footer" data-position="fixed" data-theme="b">
