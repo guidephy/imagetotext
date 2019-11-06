@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Imgur 上传示例</title>
+<title>書名辨識系統</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
@@ -56,19 +56,19 @@
                                     "contentType": false,
                                     "data": formData,
                                     beforeSend: function (xhr) {
-                                        console.log("上传中...");
-                                        $('body').append('<p>上传中...</p>');
+                                        console.log("上傳中...");
+                                        $('body').append('<p>上傳中...</p>');
                                     },
                                     success: function (res) {
                                         var imgur_link = res.data.link.replace('https://i.imgur.com/',
                                             'https://static.mashiro.top/imgur/');
                                         console.log(res.data.link);
                                         console.log(imgur_link);
-                                        $('body').append('<p>图片地址：' + imgur_link + '</p>');
+                                        $('body').append('<p>圖片網址：' + imgur_link + '</p>');
                                                 $('body').append('<img width="60% src="' + imgur_link + '" />');
                                             },
                                             error: function () {
-                                                alert("上传失败");
+                                                alert("上傳失敗");
                                             }
                                     }
                                     $.ajax(settings).done(function (response) {
