@@ -59,9 +59,17 @@
                                             'https://static.mashiro.top/imgur/');
                                         console.log(res.data.link);
                                         console.log(imgur_link);
-                                                document.getElementById("upload").innerHTML="資料處理完成";
+                    $.get("https://script.google.com/macros/s/AKfycbwjLyyuBEP4tXDTWLi0koq3N6VSpWHnssxEqs8q-m5aIYoDjrA/exec",{ 
+                                         "imageurl":  imgur_link,
+                                         
+                    function (data) {
+
+                                        document.getElementById("upload").innerHTML="資料處理完成";
                                         $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
-                                                $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
+                                        $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
+                    }
+                         
+                    });
                                             },
                                             error: function () {
                                                 alert("上傳失敗");
