@@ -22,7 +22,11 @@
 <form id="imgur">
 <input type="file" class="imgur" accept="image/*" data-max-size="5000" />
 </form>
+            
 <script>
+            var imagetext;
+            
+
             
         $("document").ready(function () {
                     $('input[type=file]').on("change", function () {
@@ -65,11 +69,11 @@
                                          "imageurl":  imgur_link,
                                          
                     function (data) {
-                                        
+                                        imagetext=data.split(",");
                                         document.getElementById("upload").innerHTML="資料處理完成";
                                         $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
                                         $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
-                                        $('body').append('<p align="center" >' + data + '</p>');
+                                        $('body').append('<p align="center" >' + imagetext[0] + '</p>');
                                 }
                                
                                
