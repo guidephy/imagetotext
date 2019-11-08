@@ -66,8 +66,8 @@
                     $.get("https://script.google.com/macros/s/AKfycbyKmiaoQghgvz5yCN4fFa0FXpkWEaeuAyR-tSPUgFHxYZFrvvo/exec",{ 
                                          "imageurl":  imgur_link,
                                          
-                    function (data) {
-                                        imagetotextdata=data.split(",");
+                    function () {
+                                        
                                         document.getElementById("upload").innerHTML="資料處理完成";
                                         $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
                                         $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
