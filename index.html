@@ -100,10 +100,12 @@
             
      function mytext()
       {
-         var parameter = {};
+      
          var imagetext=[];
-         $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", {parameter, function(data) {
-        
+         $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec",{ 
+                                         "imageurl":  imgur_link,
+                                         
+                    function (data) {
            
             return "abc" ;    
          }
