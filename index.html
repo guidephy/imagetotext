@@ -75,11 +75,12 @@
                                         document.getElementById("upload").innerHTML="資料處理完成";
                                         $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
                                         $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
-                                       alert( mytext());
+                                      
                                 }
                                
                                
                     });
+                                                 alert( mytext());
                                             },
                                             error: function () {
                                                 alert("上傳失敗");
@@ -104,10 +105,10 @@
          $.get("https://script.google.com/macros/s/AKfycbwgVZ6sftnho_eTei7TpjPmdIp_5wWjzdE8hZv6512Qm89EvOWm/exec", parameter, function(data) {
         
            
-               
+            return "abc" ;    
         });     
                  
- return "abc" ;
+
                   
       }
               
