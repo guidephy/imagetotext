@@ -67,7 +67,13 @@
                                                 
                     $.get("https://script.google.com/macros/s/AKfycbyKmiaoQghgvz5yCN4fFa0FXpkWEaeuAyR-tSPUgFHxYZFrvvo/exec",{ 
                                          "imageurl":  imgur_link,
-                                         
+                     
+                    var parameter = {};
+        parameter = {
+            startRow: x,
+            startColumn: 2
+                    };            
+                                
                     function (data) {
                                 var imagetext;
                                                      
@@ -77,19 +83,17 @@
                                         $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
                                         
                                 
-                                              $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec",{ 
-                                         "xyz":  "aaa",
+                                              $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter,
+                                         
                                          
                              function (data) {
            
                              
                                          alert(data);
-                    }
-        });    
-                                      
-                                }
+                    });
                                
-                               
+                                
+  
                     });
                                                 
                                             },
