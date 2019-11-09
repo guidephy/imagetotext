@@ -75,7 +75,7 @@
                                         document.getElementById("upload").innerHTML="資料處理完成";
                                         $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
                                         $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
-                                        gettext();
+                                       
                                 }
                                
                                
@@ -92,15 +92,7 @@
                             });
                    });
                  
-                function gettext(){
-                            
-              $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", "x":2, function(data) {
-               
-               var imagetext=[];
-               imagetext=data.split(",");
-               alert(imagetext);
-        });
-                            }
+              
 
            
     </script>
