@@ -69,20 +69,23 @@
                                          "imageurl":  imgur_link,
                                          
                     function (data) {
-                                var imagetext=[];
-                                $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec",{ 
-                                         "xyz":  "aaa",
-                                         
-                             function (data) {
-           
-                             imagetext==data.split(",");
-                    }
-        });                                       
+                                var imagetext;
+                                                     
                                         
                                         document.getElementById("upload").innerHTML="資料處理完成";
                                         $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
                                         $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
-                                        alert(imagetext[0]);
+                                        
+                                
+                                              $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec",{ 
+                                         "xyz":  "aaa",
+                                         
+                             function (data) {
+           
+                             imagetext=data.split(",");
+                                         alert(imagetext[0]);
+                    }
+        });    
                                       
                                 }
                                
