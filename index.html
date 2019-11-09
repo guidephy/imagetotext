@@ -70,7 +70,14 @@
                                          
                     function (data) {
                                 
-                                  
+                                $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec",{ 
+                                         "xyz":  "aaa",
+                                         
+                             function (data) {
+           
+                      alert( "abc");   
+                    }
+        });                                       
                                         
                                         document.getElementById("upload").innerHTML="資料處理完成";
                                         $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
@@ -80,7 +87,7 @@
                                
                                
                     });
-                                                 alert( mytext());
+                                                
                                             },
                                             error: function () {
                                                 alert("上傳失敗");
