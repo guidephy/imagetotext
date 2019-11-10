@@ -84,8 +84,13 @@
                                 
                                 
 setTimeout(function(){ 
+            
+            document.getElementById("upload").innerHTML="照片已上傳，影像辨識中... ";
+                                        $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
+                                        $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
+            
 $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
-        
+               document.getElementById("upload").innerHTML="分析完成";
                rankdata=data.split(",");
                alert(rankdata[0]);
         
@@ -96,9 +101,7 @@ $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHb
                                           
                               
                                 
-                                        document.getElementById("upload").innerHTML="資料處理完成";
-                                        $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
-                                        $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
+                                        
                                 
                                 
                                
