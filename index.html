@@ -86,8 +86,8 @@
                                 
                                 
 
-            
-                     setTimeout(function(){  $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>'); }, 5000);
+            sleep(5000);
+                      $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>'); 
                                        
                                         
             
@@ -133,14 +133,18 @@ $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHb
                             });
                    });
          
-     parameter = {
-            startRow: x,
-            startColumn: 2
-                    };         
+           
             
 
               
+function sleep(ms){
 
-           
+var starttime= new Date().getTime();
+
+do{
+
+}while((new Date().getTime()-starttime)<ms)
+
+}           
     </script>
 </body>
