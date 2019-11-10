@@ -62,14 +62,12 @@
                                     "contentType": false,
                                     "data": formData,
                                     beforeSend: function (xhr) {
-                                        console.log("資料處理中...");
                                         $('body').append('<p align="center" id="upload">資料處理中...</p>');
                                     },
                                     success: function (res) {
                                         var imgur_link = res.data.link.replace('https://i.imgur.com/',
                                             'https://static.mashiro.top/imgur/');
-                                        console.log(res.data.link);
-                                        console.log(imgur_link);
+                                        
                                        
                                         $('body').append('<p align="center" ><img  width="70%" src="' + imgur_link + '" /></p>');
                     var rankdata=[];  
@@ -99,17 +97,17 @@
                         
              $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
              rankdata=data.split(",");  
-                        
+                       $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>'); 
+               document.getElementById("upload").innerHTML="分析完成";
+              
+               alert(rankdata[0]);    
         
                });
                       
             
                             
                             
-            $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>'); 
-               document.getElementById("upload").innerHTML="分析完成";
-              
-               alert(rankdata[0]);
+         
             
                                 
                     }
