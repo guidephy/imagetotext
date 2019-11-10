@@ -95,7 +95,7 @@
 
             
             
-            do{
+            
                         
              $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
              rankdata=data.split(",");  
@@ -103,28 +103,14 @@
         
                });
                       
-                }while(rankdata[0]==null)
+            
                             
                             
             $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>'); 
                document.getElementById("upload").innerHTML="分析完成";
               
                alert(rankdata[0]);
-
-        
-               
-
-
-                                          
-                              
-                                
-                                        
-                                
-                                
-                               
-                                
-                                
-                              
+            
                                 
                     }
                                 
