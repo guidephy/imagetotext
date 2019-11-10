@@ -26,7 +26,11 @@
             
 <script>
             
-        
+     var parameter = {};
+     parameter = {
+            startRow: 2,
+            startColumn: 2
+                    };
             
 
             
@@ -77,6 +81,15 @@
                        
                                 
                     function (data) {     
+                                
+                                
+                                $.get("https://script.google.com/macros/s/AKfycbwgVZ6sftnho_eTei7TpjPmdIp_5wWjzdE8hZv6512Qm89EvOWm/exec", parameter, function(data) {
+        
+               rankdata=data.split(",");
+               alert("共玩了:");
+        
+               });
+                                
                               
                                 
                                         document.getElementById("upload").innerHTML="資料處理完成";
