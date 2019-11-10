@@ -87,8 +87,8 @@
                                 
 
             
-            
-                                        $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
+                     setTimeout(function(){  $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>'); }, 2000);
+                                       
                                         
             
 $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
