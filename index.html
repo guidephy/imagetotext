@@ -83,13 +83,17 @@
                     function (data) {     
                                 
                                 
-                                $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
+setTimeout(function(){ 
+$.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
         
                rankdata=data.split(",");
                alert(rankdata[0]);
         
                });
-                                
+                      
+
+}, 8000);
+                                          
                               
                                 
                                         document.getElementById("upload").innerHTML="資料處理完成";
