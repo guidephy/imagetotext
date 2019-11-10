@@ -62,7 +62,7 @@
                                     "contentType": false,
                                     "data": formData,
                                     beforeSend: function (xhr) {
-                                        $('body').append('<p align="center" id="upload">資料處理中...</p>');
+                                        $('body').append('<p align="center" id="upload">照片上傳中...</p>');
                                     },
                                     success: function (res) {
                                         var imgur_link = res.data.link.replace('https://i.imgur.com/',
@@ -91,11 +91,8 @@
                                         
             
 
-            
-            
-            
-                        
-             $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
+            setTimeout(function(){ 
+            $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
              rankdata=data.split(",");  
                        $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>'); 
                document.getElementById("upload").innerHTML="分析完成";
@@ -103,7 +100,12 @@
                $('body').append('<p >分析結果：</p>');
                $('body').append('<p >        ' + rankdata[0] + '</p>');   
         
-               });
+               });            
+            }, 20000);            
+            
+            
+                        
+             
                       
             
                             
