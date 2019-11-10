@@ -85,21 +85,23 @@
                     function (data) {     
                                 
                                 
-setTimeout(function(){ 
+
             
             
                                         $('body').append('<p align="center" >圖片網址：' + imgur_link + '</p>');
                                         
             
 $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
+             rankdata=data.split(",");   
+            while(rankdata[0]==null){};
                document.getElementById("upload").innerHTML="分析完成";
-               rankdata=data.split(",");
+              
                alert(rankdata[0]);
         
                });
                       
 
-}, 1000);
+
                                           
                               
                                 
