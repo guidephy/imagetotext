@@ -70,7 +70,7 @@
                                         
                                        
                                         $('body').append('<p align="center" ><img  width="50%" src="' + imgur_link + '" /></p>');
-                    var rankdata=[];  
+                    var imagetext;  
                                                 
                                                 
                                                 
@@ -99,17 +99,19 @@
                        }, 15000); 
 
 
+           
             setTimeout(function(){ 
             $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
-             rankdata=data;  
+             imagetext=data;  
                       
                document.getElementById("upload").innerHTML="分析完成";
               
                $('body').append('<p >分析結果：</p>');
-               $('body').append('<p >        ' + rankdata+ '</p>');   
+               $('body').append('<p >        ' + imagetext+ '</p>');   
         
                });            
-            }, 20000);            
+            }, 20000);           
+                   
             
             
                         
