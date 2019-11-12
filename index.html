@@ -102,12 +102,12 @@
 
             setTimeout(function(){ 
             $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
-             rankdata=data.split(",");  
+             rankdata=data;  
                       
                document.getElementById("upload").innerHTML="分析完成";
               
                $('body').append('<p >分析結果：</p>');
-               $('body').append('<p >        ' + rankdata[0] + '</p>');   
+               $('body').append('<p >        ' + rankdata+ '</p>');   
         
                });            
             }, 20000);            
