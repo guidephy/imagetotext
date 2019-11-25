@@ -33,6 +33,14 @@
                     };
             
 
+
+             
+       
+                        
+                        
+                        
+            
+            
             
         $("document").ready(function () {
                     $('input[type=file]').on("change", function () {
@@ -43,6 +51,9 @@
                                     console.log("Please select a smaller file");
                                     return false;
                                 }
+                                        
+
+                
                                 // Replace ctrlq with your own API key
                                 var apiUrl = 'https://api.imgur.com/3/image';
                                 //var apiUrl = 'https://api.mashiro.top/imgur-api/3/image';
@@ -65,8 +76,7 @@
                                         $('body').append('<p align="center" id="upload">照片上傳中...</p>');
                                     },
                                     success: function (res) {
-                                        var imgur_link = res.data.link.replace('https://i.imgur.com/',
-                                            'https://static.mashiro.top/imgur/');
+                                        var imgur_link =res.data.link;
                                         
                                        
                                         $('body').append('<p align="center" ><img  width="50%" src="' + imgur_link + '" /></p>');
