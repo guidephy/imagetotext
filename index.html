@@ -34,6 +34,8 @@
 </form>
             
 <script>
+         
+         
 
 function rank(){
 
@@ -51,7 +53,11 @@ function rank(){
          
      var username = document.getElementById("username").value;      
      
-
+ var parameter = {};
+     parameter = {
+           "username":  username,
+                    };
+            
 
              
        
@@ -135,7 +141,7 @@ function rank(){
             $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", 
                                         
                                          
-                  { "username":  username},
+                   parameter,
                   
                      function(data) {
              imagetext=data;  
