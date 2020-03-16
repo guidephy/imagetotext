@@ -134,14 +134,7 @@ function rank(){
 
 
            
-            setTimeout(function(){ 
-          $.get("https://script.google.com/macros/s/AKfycbyKmiaoQghgvz5yCN4fFa0FXpkWEaeuAyR-tSPUgFHxYZFrvvo/exec",{ 
-                                         
-                                         "username":  username},
-                     
-                       
-                                
-                    function (data) {     
+            
                                 
              imagetext=data;  
                       
@@ -151,8 +144,7 @@ function rank(){
                         
                $('body').append('<p >        ' + imagetext+ '</p>');   
         
-               });            
-            }, 12000);           
+                        
                    
 
                                 
