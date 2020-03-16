@@ -136,7 +136,11 @@ function rank(){
 
            
             setTimeout(function(){ 
-            $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", parameter, function(data) {
+            $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", { 
+                                        
+                                         "username":  username,
+                  
+                     , function(data) {
              imagetext=data;  
                       
                document.getElementById("upload").innerHTML="分析完成";
@@ -144,7 +148,7 @@ function rank(){
                $('body').append('<p >分析結果：</p>');
                         
                $('body').append('<p >        ' + imagetext+ '</p>');   
-        
+                     }
                });            
             }, 12000);           
                    
