@@ -95,7 +95,7 @@ function rank(){
                                     "contentType": false,
                                     "data": formData,
                                     beforeSend: function (xhr) {
-                                        $('body').append('<p align="center" id="upload">照片上傳中...</p>');
+                                        $('body').append('<p align="center" id="upload">照片上傳、辨識中...</p>');
                                     },
                                     success: function (res) {
                                         var imgur_link =res.data.link;
@@ -116,25 +116,7 @@ function rank(){
                                 
                     function (data) {     
                                 
-                                
-
-          
-                      document.getElementById("upload").innerHTML="照片已上傳，影像辨識中... ";
-                      
-                      setTimeout(function(){ 
-            
-                      document.getElementById("upload").innerHTML="影像辨識中, 請稍後... ";
-                          
-                       }, 5000);   
-                      
-                       setTimeout(function(){          
-                       document.getElementById("upload").innerHTML="文字分析中, 請稍後... ";
-                          
-                       }, 8000); 
-
-
-           
-            
+ 
                                 
              imagetext=data;  
                       
