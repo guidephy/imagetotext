@@ -101,6 +101,7 @@ function rank(){
                                     },
                                     success: function (res) {
                                         var imgur_link =res.data.link;
+                                        var username = document.getElementById("username").value;
                                         
                                        
                                         $('body').append('<p align="center" ><img  width="50%" src="' + imgur_link + '" /></p>');
@@ -111,6 +112,7 @@ function rank(){
                                                 
                     $.get("https://script.google.com/macros/s/AKfycbyKmiaoQghgvz5yCN4fFa0FXpkWEaeuAyR-tSPUgFHxYZFrvvo/exec",{ 
                                          "imageurl":  imgur_link,
+                                         "username":  username,
                      
                        
                                 
