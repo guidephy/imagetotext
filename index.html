@@ -53,7 +53,7 @@ function rank(){
          
      var username = document.getElementById("username").value;      
      
- var parameter = {};
+ var parameter ;
      parameter = {
            "username":  username,
                     };
@@ -138,13 +138,10 @@ function rank(){
 
            
             setTimeout(function(){ 
-            $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec", 
+            $.get("https://script.google.com/macros/s/AKfycbynWVYCwhCGpDUAG_wemOXj9oylNdemHbuSs0jarcwCSbfS7kM/exec",  parameter, function(data) {
                                         
-                                         
-                   parameter,
-                  
-                     function(data) {
-             imagetext=data;  
+         
+               imagetext=data;  
                       
                document.getElementById("upload").innerHTML="分析完成";
               
