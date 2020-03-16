@@ -22,7 +22,7 @@
     
 <div style="text-align:center;" id="forusername">
 <input type="text"   id="username" placeholder="請輸入名字">
-<button id="sendBtn">開始使用</button>
+<button id="sendBtn" onclick="rank()">開始使用</button>
 </div>    
             
             
@@ -31,8 +31,13 @@
 </form>
             
 <script>
-     
-sendBtn.on('click',function() { alert("請輪入姓名"); })
+
+function rank(){
+
+alert("請輪入姓名");
+};        
+            
+
 
 /*
 sendBtn.on('click',function() {
