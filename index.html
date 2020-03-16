@@ -25,9 +25,9 @@
 <button id="sendBtn" onclick="rank()">開始使用</button>
 </div>
 <div id="guide"  style='visibility:hidden'>
-<h4> Hi</h4> 
-<h4 id="guidename" ></h4>            
-<h4>請將有問題的物理題目拍照後，再上傳</h4>   
+<h5> Hi</h5> 
+<h5 id="guidename" ></h5>            
+<h5>請將有問題的物理題目拍照後，再上傳</h5>   
 </div>            
 <form id="imgur" style='visibility:hidden'>
 <input type="file"   class="imgur" accept="image/*" data-max-size="10000" />
@@ -40,7 +40,7 @@ function rank(){
  if (document.getElementById("username").value==""){
          alert("請輪入姓名"); 
       }else{
-           document.getElementById("guidename").value=document.getElementById("username").value;
+           document.getElementById("guidename").innerHTML=document.getElementById("username").value;
            document.getElementById("sendBtn").style.visibility='hidden';       
            document.getElementById("imgur").style.visibility='visible'; 
            document.getElementById("guide").style.visibility='visible'; 
