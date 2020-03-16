@@ -34,7 +34,12 @@
 
 function rank(){
 
-alert("請輪入姓名");
+ if (document.getElementById("username").value==""){
+         alert("請輪入姓名"); 
+      }else{
+           document.getElementById("sendBtn").style.visibility='hidden';       
+           document.getElementById("imgur").style.visibility='visible'; 
+      }  
 };        
             
 
