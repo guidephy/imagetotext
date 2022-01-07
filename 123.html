@@ -1,0 +1,105 @@
+<html>
+
+<head>
+
+    <script src=jquery-2.2.4.min.js></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>影像截取文字系統</title>
+
+</head>
+
+<body>
+
+<div  align="center">
+    <h3>影像辨識文字系統</h3>
+</div>
+
+<div  align="center">
+<form id="imgur">
+    <input type="file" class="imgur" accept="image/*" data-max-size="5000" />
+</form>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script>
+$("document").ready(function () {
+    $('input[type=file]').on("change", function () {
+        var $files = $(this).get(0).files;
+        var formData = new FormData();
+        formData.append("image", $files[0]);
+        if ($files.length) {
+            // Reject big files
+            if ($files[0].size > $(this).data("max-size") * 1024) {
+                console.log("Please select a smaller file");
+                return false;
+            }
+            // Replace {{Your Client ID }} with your own API key
+            var apiUrl = 'https://api.imgur.com/3/image';
+            var apiKey = '753a95f007e458c';
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": apiUrl,
+                "method": "POST",
+                "datatype": "json",
+                "headers": {
+                    "Authorization": "Client-ID " + apiKey
+                },
+                "processData": false,
+                "contentType": false,
+                "data": formData,
+                beforeSend: function () {
+                    console.log("上傳中...");
+                },
+                success: function (res) {
+                    $('body').append('<img src="' + res.data.link + '" />');
+                    alert(res.data.link);
+
+
+                     var imgur_link =res.data.link;
+
+ $.get("https://script.google.com/macros/s/AKfycbwu_SzgAQWkj-iHdXcjp8LMtXr_A4avDFXzjR-l7jJcKbmvyqM/exec",{ 
+                                         "imageurl":  imgur_link
+                    },
+                       
+                                
+                    function (data) {     
+                                
+ 
+                                
+             var imagetext=data;  
+                      
+            
+              
+               $('body').append('<p >分析結果：</p>');
+                        
+               $('body').append('<p >        ' + imagetext+ '</p>');   
+
+
+
+        
+                        
+                   
+
+                                
+                    
+  
+                    });
+
+
+                },
+                error: function () {
+                    alert("上傳失敗");
+                }
+            }
+            $.ajax(settings).done(function (res) {
+                console.log("Done");
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>
