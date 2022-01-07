@@ -13,7 +13,7 @@
 <body>
 
 <div  align="center">
-    <h3>影像辨識文字系統</h3>
+    <h3>影像截取文字系統</h3>
 </div>
 
 <div  align="center">
@@ -51,11 +51,11 @@ $("document").ready(function () {
                 "contentType": false,
                 "data": formData,
                 beforeSend: function () {
-                    console.log("上傳中...");
+                     $('body').append('<p align="center" id="upload">照片上傳、辨識中...</p>');
                 },
                 success: function (res) {
-                    $('body').append('<img src="' + res.data.link + '" />');
-                    alert(res.data.link);
+                    $('body').append('<img  width="80%" src="' + res.data.link + '" />');
+                   
 
 
                      var imgur_link =res.data.link;
@@ -78,13 +78,6 @@ $("document").ready(function () {
                $('body').append('<p >        ' + imagetext+ '</p>');   
 
 
-
-        
-                        
-                   
-
-                                
-                    
   
                     });
 
